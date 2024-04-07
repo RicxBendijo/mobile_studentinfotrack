@@ -1,4 +1,4 @@
-import { FlatList, Image, Modal, StyleSheet, Text, TouchableOpacity,TouchableWithoutFeedback, View } from 'react-native';
+import { FlatList, Image, Modal, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import React from 'react';
 import colors from "./Colors";
 import { AntDesign } from '@expo/vector-icons';
@@ -58,9 +58,6 @@ export default class App extends React.Component {
                 </View>
 
                 <TouchableWithoutFeedback onLongPress={() => this.showContextMenu()}>
-
-
-                </TouchableWithoutFeedback>
                 <View style={styles.listContainer}>
                     <FlatList 
                         data={this.state.lists} 
@@ -71,6 +68,8 @@ export default class App extends React.Component {
                         keyboardShouldPersistTaps="always" 
                     />
                 </View>
+                </TouchableWithoutFeedback>
+
     
                 
                 <View style={styles.addButtonContainer}>
@@ -83,6 +82,8 @@ export default class App extends React.Component {
         );
     }
 }
+
+
 
 const styles = StyleSheet.create({
     container: {

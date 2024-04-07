@@ -55,6 +55,7 @@ export default function TodoModal(props) {
 
                 
                 
+                
             </SafeAreaView>
         </KeyboardAvoidingView>
     );
