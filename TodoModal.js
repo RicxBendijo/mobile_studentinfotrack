@@ -29,6 +29,7 @@ export default class TodoModal extends React.Component {
         }
     };
 
+//
     renderTodo = (todo, index) => {
         const { editedTodoIndex, editedTodoTitle } = this.state;
 
@@ -55,13 +56,22 @@ export default class TodoModal extends React.Component {
                         {todo.title}
                     </Text>
                 )}
-                <TouchableOpacity onPress={() => this.deleteTodo(index)}>
-                    <AntDesign name="delete" size={24} color={Colors.gray} />
-                </TouchableOpacity>
+                <View style={styles.iconContainer}>
+                    {/* mao ni ang edit icon pero wala pa syay functionality */}
+                    <AntDesign name="edit" size={24} color={Colors.gray} />
+                    <TouchableOpacity onPress={() => this.deleteTodo(index)} style={styles.deleteIcon}>
+                        <AntDesign name="delete" size={24} color={Colors.gray} />
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     };
+    //
 
+    
+    
+    
+    
     startEditingTodoTitle = (index, title) => {
         this.setState({ editedTodoIndex: index, editedTodoTitle: title });
     };
@@ -217,4 +227,16 @@ const styles = StyleSheet.create({
         color: Colors.black,
         flex: 1,
     },
+    todoContainer: {
+        paddingVertical: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    iconContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        
+    }, 
 });
